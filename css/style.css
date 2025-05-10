@@ -1,200 +1,172 @@
-/* Reset de estilos */
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Estilo do body */
-  body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Para garantir que o footer fique no final */
-  }
-  
-  /* Navbar */
-  .navbar {
-    background-color: #00796b; /* Azul Petróleo */
-    padding: 1rem 0;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .navbar-logo a {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease; /* Transição suave para a cor do logo */
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar-links li {
-    list-style: none;
-  }
-  
-  .navbar-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s ease; /* Transição suave para a cor dos links */
-  }
-  
-  .navbar-links li a:hover {
-    color: #ffeb3b; /* Cor quando o link for hover */
-  }
-  
-  /* Header */
-  header {
-    background: #00796b;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  h1 {
-    font-size: 3rem;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
-  
-  /* Seção da imagem de capa */
-  .image-cover img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  /* Seção com galeria de imagens */
-  .image-gallery {
-    text-align: center;
-    padding: 2rem 0;
-  }
-  
-  .image-gallery h2 {
-    font-size: 2rem;
-    color: #00796b;
-    margin-bottom: 1rem;
-  }
-  
-  .gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .gallery img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  /* Seções */
-  main {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
-    flex: 1; /* Faz com que o conteúdo ocupe o espaço disponível */
-  }
-  
-  h2 {
-    color: #00796b;
-  }
-  
-  section {
-    margin-bottom: 2rem;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #ddd;
-    font-size: 0.9rem;
-    margin-top: auto; /* Faz o footer sempre ir para o final */
-  }
-  
-  /* Responsividade */
-  @media screen and (max-width: 768px) {
-    /* Navbar */
-    .navbar-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .navbar-links {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .navbar-logo a {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-  
-    header h1 {
-      font-size: 2rem;
-    }
-  
-    header p {
-      font-size: 1rem;
-    }
-  
-    main {
-      padding: 1rem;
-    }
-  
-    .gallery {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .gallery img {
-      max-width: 90%; /* Imagens menores em dispositivos móveis */
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    /* Navbar */
-    .navbar-container {
-      padding: 0 10px;
-    }
-  
-    .navbar-links li a {
-      font-size: 1rem;
-    }
-  
-    header h1 {
-      font-size: 1.8rem;
-    }
-  
-    header p {
-      font-size: 0.9rem;
-    }
-  }
-  
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	/* Garante que o conteúdo ocupe toda a altura da página */
+}
+
+/* Navbar & footer */
+.navbar {
+	background-color: #003d33;
+	color: white;
+	padding: 1rem 0;
+}
+
+.navbar-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+/* Logo */
+.navbar-logo a {
+	color: white;
+	font-size: 1.8rem;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* Menu Toggle (hamburger) */
+.menu-toggle {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 2rem;
+	cursor: pointer;
+	display: block;
+}
+
+/* Links */
+.navbar-links {
+	list-style: none;
+	width: 100%;
+	display: none;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.navbar-links li a {
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.navbar-links li a:hover {
+	text-decoration: underline;
+}
+
+/* Footer */
+footer {
+	background-color: #003d33;
+	color: white;
+	padding: 1rem 0;
+	text-align: center;
+	margin-top: auto;
+	/* Garante que o footer fique no final */
+}
+
+footer p {
+	width: 100%;
+}
+
+/* Títulos das seções */
+.section-title {
+	text-align: center;
+	font-size: 2rem;
+	margin: 2rem 0;
+	color: #003d33;
+}
+
+/* Imagens */
+.image-cover img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.image-gallery {
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+	/* Garante que as imagens fiquem distribuídas igual */
+	margin-top: 2rem;
+	flex-wrap: wrap;
+	/* Permite que as imagens se adaptem em dispositivos menores */
+}
+
+.gallery-item {
+	flex: 1;
+	min-width: 30%;
+	/* Garante que cada imagem ocupe no mínimo 30% da largura */
+}
+
+.gallery-item img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+/* Ajuste a altura da primeira div da imagem */
+.first-image {
+	height: 50vh;
+	/* Ou qualquer valor que você ache melhor, como 40vh, 60vh, etc. */
+	overflow: hidden;
+	/* Garante que a imagem não vaze fora da div */
+}
+
+/* Garantir que a imagem ocupe o espaço da div corretamente */
+.first-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* A imagem vai cobrir a div */
+}
+
+/* Responsivo - desktop */
+@media (min-width: 768px) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.gallery-item {
+		min-width: 100%;
+		/* As imagens ocuparão 100% da largura em telas pequenas */
+	}
+
+	.navbar-links {
+		display: flex !important;
+		flex-direction: row;
+		gap: 2rem;
+		width: auto;
+		margin-top: 0;
+	}
+
+	.navbar-container {
+		flex-wrap: nowrap;
+	}
+
+	/* Ajuste na galeria para manter imagens alinhadas em telas maiores */
+	.image-gallery {
+		justify-content: space-between;
+	}
+
+	.gallery-item {
+		min-width: 30%;
+	}
+
+}
