@@ -1,32 +1,200 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset de estilos */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo do body */
+  body {
+    font-family: Arial, sans-serif;
     background: #f4f4f4;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para garantir que o footer fique no final */
   }
   
-  header {
-    background: #2e7d32;
+  /* Navbar */
+  .navbar {
+    background-color: #00796b; /* Azul Petróleo */
+    padding: 1rem 0;
     color: white;
-    padding: 2rem;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
   }
   
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .navbar-logo a {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave para a cor do logo */
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-links li {
+    list-style: none;
+  }
+  
+  .navbar-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Transição suave para a cor dos links */
+  }
+  
+  .navbar-links li a:hover {
+    color: #ffeb3b; /* Cor quando o link for hover */
+  }
+  
+  /* Header */
+  header {
+    background: #00796b;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  
+  /* Seção da imagem de capa */
+  .image-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Seção com galeria de imagens */
+  .image-gallery {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .image-gallery h2 {
+    font-size: 2rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+  }
+  
+  .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Seções */
   main {
     max-width: 800px;
     margin: auto;
     padding: 2rem;
+    flex: 1; /* Faz com que o conteúdo ocupe o espaço disponível */
   }
   
   h2 {
-    color: #2e7d32;
+    color: #00796b;
   }
   
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  /* Footer */
   footer {
     text-align: center;
     padding: 1rem;
     background: #ddd;
     font-size: 0.9rem;
+    margin-top: auto; /* Faz o footer sempre ir para o final */
+  }
+  
+  /* Responsividade */
+  @media screen and (max-width: 768px) {
+    /* Navbar */
+    .navbar-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .navbar-logo a {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    header p {
+      font-size: 1rem;
+    }
+  
+    main {
+      padding: 1rem;
+    }
+  
+    .gallery {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .gallery img {
+      max-width: 90%; /* Imagens menores em dispositivos móveis */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Navbar */
+    .navbar-container {
+      padding: 0 10px;
+    }
+  
+    .navbar-links li a {
+      font-size: 1rem;
+    }
+  
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    header p {
+      font-size: 0.9rem;
+    }
   }
   
